@@ -11,8 +11,6 @@ It pairs a small set of token-driven UI primitives (Button, Badge, form controls
 - **App:** http://sharathdaniel.com/storybook-app/
 - **Storybook:** http://sharathdaniel.com/storybook-app/storybook/
 
-Auto-deployed to GitHub Pages on every push to `main` (see `.github/workflows/deploy.yml`).
-
 ---
 
 ## Stack
