@@ -16,7 +16,7 @@ export function App() {
           <Route index element={<ComponentsDemo />} />
         </Route>
       </Routes>
-      {/* Global SVG sprite — hidden; <use href="#icon-*"> references it. */}
+      {/* Global SVG sprite - hidden; <use href="#icon-*"> references it. */}
       <IconRegistry className="u-d-none" />
     </BrowserRouter>
   );

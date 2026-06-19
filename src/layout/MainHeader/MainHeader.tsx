@@ -7,7 +7,7 @@ type Theme = 'light' | 'dark';
 
 export function MainHeader() {
   // The inline bootstrap script in index.html sets data-theme before paint, so
-  // initialise from it — no setState-in-effect needed for the initial value.
+  // initialise from it - no setState-in-effect needed for the initial value.
   const [theme, setTheme] = useState<Theme>(() =>
     document.documentElement.dataset['theme'] === 'dark' ? 'dark' : 'light',
   );

@@ -14,7 +14,7 @@ const preview: Preview = {
   },
   decorators: [
     // Sets data-theme="light|dark" on <html> (attributeName defaults to 'data-theme')
-    // — matches the StyleBase token themes.
+    // - matches the StyleBase token themes.
     withThemeByDataAttribute({
       themes: { light: 'light', dark: 'dark' },
       defaultTheme: 'light',

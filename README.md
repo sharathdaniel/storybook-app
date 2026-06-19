@@ -18,10 +18,10 @@ Auto-deployed to GitHub Pages on every push to `main` (see `.github/workflows/de
 ## Stack
 
 - **React 19** + **TypeScript**
-- **Vite** — dev server and build
-- **Storybook 10** — component explorer and docs
-- **KendoReact** — DatePicker, DropDownList, NumericTextBox (free-tier components)
-- **StyleBase** — SCSS architecture (tokens, themes, CSS layers)
+- **Vite**: dev server and build
+- **Storybook 10**: component explorer and docs
+- **KendoReact**: DatePicker, DropDownList, NumericTextBox (free-tier components)
+- **StyleBase**: SCSS architecture (tokens, themes, CSS layers)
 
 ---
 
@@ -50,10 +50,10 @@ npm run format:check # Prettier check
 
 ```
 src/
-├── components/   StyleBase UI primitives — Button, IconButton, Badge,
+├── components/   StyleBase UI primitives: Button, IconButton, Badge,
 │                 TextField, Textarea, Checkbox, Radio, Toggle
 ├── stories/      Storybook stories (incl. 3 KendoReact components)
-├── layout/       App shell — MainLayout, MainHeader, Sidebar
+├── layout/       App shell: MainLayout, MainHeader, Sidebar
 ├── pages/        ComponentsDemo (demo page)
 ├── icons/        SVG sprite icon system
 └── scss/         The StyleBase system (see Styling)
@@ -67,12 +67,12 @@ bundle lean (see `src/scss/vendor/`).
 
 ---
 
-## Styling — StyleBase
+## Styling (StyleBase)
 
 The full SCSS system lives under `src/scss/` (tokens, abstracts, base, components,
 layout, utilities) on a layered cascade: `reset, base, plugins, components, utilities`.
 
-- **Architecture & rules:** [`AGENTS.md`](AGENTS.md) — the canonical StyleBase rules enforced in this repo (also read by Claude Code via `CLAUDE.md`, and by Cursor via `.cursor/rules/`).
+- **Architecture & rules:** [`AGENTS.md`](AGENTS.md), the canonical StyleBase rules enforced in this repo (also read by Claude Code via `CLAUDE.md`, and by Cursor via `.cursor/rules/`).
 - **Full StyleBase docs:** https://github.com/sharathdaniel/style-base
 - **Adopting StyleBase elsewhere:** [`INSTALLATION.md`](INSTALLATION.md)
 
@@ -80,9 +80,9 @@ layout, utilities) on a layered cascade: `reset, base, plugins, components, util
 
 ## Tooling
 
-- **Stylelint** + **Prettier** — SCSS linting and formatting
-- **Husky** + **lint-staged** — pre-commit enforcement
-- **LF line endings** — enforced via `.gitattributes`, `.editorconfig`, and Prettier
+- **Stylelint** + **Prettier**: SCSS linting and formatting
+- **Husky** + **lint-staged**: pre-commit enforcement
+- **LF line endings**: enforced via `.gitattributes`, `.editorconfig`, and Prettier
 
 For this repo only:
 
@@ -97,11 +97,11 @@ git config core.eol lf
 
 `@storybook/addon-mcp` exposes a Model Context Protocol server while Storybook runs
 (`http://localhost:6006/mcp`, registered in `.mcp.json`). AI coding agents can use it
-to discover the real component APIs before generating UI — see the discovery rules in
+to discover the real component APIs before generating UI; see the discovery rules in
 [`AGENTS.md`](AGENTS.md).
 
 ---
 
 ## License
 
-Released under the **Zero-Clause BSD License (0BSD)** — see [LICENSE](LICENSE).
+Released under the **Zero-Clause BSD License (0BSD)**; see [LICENSE](LICENSE).

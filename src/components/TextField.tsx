@@ -39,7 +39,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 }
 
 /**
- * StyleBase multi-line textarea. Note: no size modifier — those set a fixed
+ * StyleBase multi-line textarea. Note: no size modifier - those set a fixed
  * height that breaks textareas (see _textfield.scss).
  */
 export function Textarea({ error = false, className, ref, ...rest }: TextareaProps) {

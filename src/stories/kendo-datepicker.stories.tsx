@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
 
 /**
- * KendoReact **DatePicker** — an example of wiring a real third-party React
+ * KendoReact **DatePicker** - an example of wiring a real third-party React
  * component into Storybook. Its theme is the Kendo default theme remapped to
  * StyleBase semantic tokens in `src/scss/components/_kendo-overrides.scss`, so it matches
  * the design system and follows the light/dark `data-theme` switch.

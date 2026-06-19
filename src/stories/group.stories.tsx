@@ -3,8 +3,8 @@ import { Button, TextField } from '../components';
 
 /**
  * Groups join related controls into a single visual unit:
- * - `app-c-btn-group` — segmented row of buttons
- * - `app-c-input-group` — adjacent inputs (and optionally a button)
+ * - `app-c-btn-group` - segmented row of buttons
+ * - `app-c-input-group` - adjacent inputs (and optionally a button)
  */
 const meta: Meta = {
   title: 'Components/Groups',
@@ -49,7 +49,7 @@ export const InputGroup: Story = {
   ),
 };
 
-/** An input joined to a button — e.g. a search field. */
+/** An input joined to a button - e.g. a search field. */
 export const Mixed: Story = {
   render: () => (
     <div className="u-grid-row">

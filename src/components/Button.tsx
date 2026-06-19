@@ -37,7 +37,7 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   variant?: Variant;
   /** Icon-only (square) button size. */
   size?: 'xs' | 'sm' | 'md' | 'lg';
-  /** Required — icon-only buttons have no visible text label. */
+  /** Required - icon-only buttons have no visible text label. */
   'aria-label': string;
   ref?: Ref<HTMLButtonElement>;
 }
