@@ -1,297 +1,98 @@
-# StyleBase
+# storybook-app
 
-[![Ask
-DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sharathdaniel/style-base)
+A **React + Storybook component library**, styled with [StyleBase](https://github.com/sharathdaniel/style-base) and integrating [KendoReact](https://www.telerik.com/kendo-react-ui) components.
 
-**StyleBase is a minimal, opinionated SCSS architecture for building
-scalable, token-driven design systems.**
-
-It provides a clean, extensible styling baseline that teams can evolve
-based on product needs without locking them into a UI kit or
-utility-first workflow.
+It pairs a small set of token-driven UI primitives (Button, Badge, form controls) with a few KendoReact components, all themed through the StyleBase SCSS system and explorable in Storybook.
 
 ---
 
-## Table of Contents
+## Stack
 
-- [Purpose and Scope](#purpose-and-scope)
-- [Core Principles](#core-principles)
-- [Architecture](#architecture)
-- [CSS Layers](#css-layers)
-- [Theming Model](#theming-model)
-- [Customization](#customization)
-- [Layout Systems](#layout-systems)
-- [Getting Started](#getting-started)
-- [Tooling](#tooling)
-- [Reference Implementation](#reference-implementation)
-
----
-
-## Purpose and Scope
-
-### What it is
-
-- A style architecture, not a finished design system
-- Token-driven (colors, spacing, typography)
-- Built on modern CSS Layers for predictable overrides
-- Framework-agnostic
-
-### What it is not
-
-- A drop-in UI kit
-- A utility-first framework
-- A replacement for Tailwind or Bootstrap
-- A collection of pre-styled components
-
----
-
-## Core Principles
-
-### Layers over `!important`
-
-Override order is managed through native CSS Layers and predictable
-cascade flow instead of specificity escalation.
-
-Use `!important` only for rare, utility-level exceptions where a
-deterministic override is required (for example, accessibility helpers,
-forced behavioral resets, or targeted overrides against third-party
-inline styles). Keep it intentional, documented, and never the default.
-
-### Tokens First
-
-Design decisions live in tokens (base and semantic).
-
-- Base tokens define raw values (colors, spacing, typography)
-- Semantic tokens map meaning to those values
-- Components consume semantic tokens only
-
-This keeps components theme-aware and prevents value duplication.
-
-### Rem-Based Scaling
-
-Typography, spacing, and layout use `rem` units for accessibility and
-consistent scaling.
-
-- Spacing values are defined once in spacing tokens
-- Utilities consume spacing tokens for class generation
-- Components and layout use `rem()` directly for spacing (e.g., `rem(16)`)
-- Values follow a 4px scale
-
-`1px` is used only where visual precision is required (e.g., borders,
-dividers).
-
-Media queries remain in `px` to avoid unexpected behavior from user
-font-size adjustments.
-
-### Exceptions, Not Shortcuts
-
-Utilities solve one-off layout or state problems.
-
-They should not replace components.
-
-```html
-<!-- Avoid: utility chains as pseudo-components -->
-<div class="u-d-flex u-items-center u-justify-between u-px-4 u-py-3">
-  Submit
-</div>
-```
-
-```html
-<!-- Prefer: reusable component -->
-<button class="app-c-btn app-c-btn-primary">Submit</button>
-```
-
-```html
-<!-- Acceptable: one-off override -->
-<button class="app-c-btn app-c-btn-primary u-mt-4">Submit</button>
-```
-
----
-
-## Architecture
-
-All styling lives under `src/scss`:
-
-    src/scss/
-      abstracts/
-      base/
-      components/
-      layout/
-      tokens/
-      utilities/
-      main.scss
-
-- **Abstracts**: Shared Sass logic with no CSS output (functions, mixins, scales)
-- **Base**: Reset and global base styles (html/body defaults)
-- **Components**: Reusable UI building blocks
-- **Layout**: Macro-level structures and shared page wrappers
-- **Tokens**: CSS custom properties, SCSS variables, and theme definitions
-- **Utilities**: Single-purpose helpers and utility classes
-
----
-
-## CSS Layers
-
-StyleBase uses native CSS Layers in global stylesheets only:
-
-```scss
-@layer reset, base, plugins, components, utilities;
-```
-
-- Tokens do not participate in layer order, so token files never
-  use `@layer`
-- Layers define layer order for global styles and keep overrides
-  predictable in cascade order without specificity escalation
-- `plugins` is a reserved layer slot for vendor CSS ordering
-  (typically loaded from `node_modules`)
-
----
-
-## Theming Model
-
-- A single base color palette is defined once in `tokens/_colors.scss`
-- Each theme (light, dark) maps semantic tokens to that palette
-- Components consume semantic tokens only
-- Light theme is the `:root` default - works without any `data-theme` attribute
-- Dark theme auto-applies via `prefers-color-scheme: dark` when no explicit theme is set
-- Setting `data-theme="light"` or `data-theme="dark"` always overrides system preference
-
-This allows full theme changes without rewriting component styles.
-
----
-
-## Customization
-
-Customize in this order, then let components consume the updated values:
-
-1. **Typography foundation**
-   - `src/scss/tokens/_font.scss` (sizes, line heights, weights, families)
-   - `src/scss/abstracts/mixins/_typography.scss` (role mappings like `h-lg`, `body-md`, `ui-sm`)
-   - `src/scss/components/_typography.scss` for class-level usage changes (only when needed)
-2. **Color foundation**
-   - `src/scss/tokens/_colors.scss`
-   - `src/scss/tokens/themes/_light.scss`
-   - `src/scss/tokens/themes/_dark.scss`
-3. **System scales**
-   - `src/scss/tokens/_spacing.scss`
-   - `src/scss/tokens/_icon.scss`
-   - `src/scss/abstracts/_scales.scss`
-4. **Responsive breakpoints**
-   - `src/scss/abstracts/mixins/_breakpoint.scss`
-   - Breakpoint tiers (aligned with Tailwind v4):
-     - `base: 0px`
-     - `sm: 640px`
-     - `md: 768px`
-     - `lg: 1024px`
-     - `xl: 1280px`
-     - `2xl: 1536px`
-
----
-
-## Layout Systems
-
-StyleBase provides dedicated flex and grid layout systems, both using a 12-column structure by default:
-
-- `src/scss/utilities/_flex-layout.scss` for one-dimensional row-based layouts
-- `src/scss/utilities/_grid-layout.scss` for two-dimensional column/row layouts
-
-Both layout systems use the same responsive tier names:
-
-- `sm`
-- `md`
-- `lg`
-- `xl`
-- `2xl`
-
-Base is the default (no breakpoint suffix). Responsive class variants start at `sm` and up.
-
-Start with flex layout for most common UI composition needs (row/column alignment, spacing, and distribution in a single axis).
-Choose grid layout when you need two-dimensional control across both rows and columns.
+- **React 19** + **TypeScript**
+- **Vite** — dev server and build
+- **Storybook 10** — component explorer and docs
+- **KendoReact** — DatePicker, DropDownList, NumericTextBox (free-tier components)
+- **StyleBase** — SCSS architecture (tokens, themes, CSS layers)
 
 ---
 
 ## Getting Started
 
-See [installation guide](INSTALLATION.md) for adopting StyleBase - what to copy, framework setup, and configuration.
+```bash
+npm install
+
+npm run dev          # Vite app          → http://localhost:5173
+npm run storybook    # component explorer → http://localhost:6006
+npm run build        # type-check + production build
+npm run preview      # preview the production build
+```
+
+Quality:
+
+```bash
+npm run lint         # ESLint (TS/React)
+npm run lint:scss    # Stylelint (SCSS)
+npm run format:check # Prettier check
+```
+
+---
+
+## What's Inside
+
+```
+src/
+├── components/   StyleBase UI primitives — Button, IconButton, Badge,
+│                 TextField, Textarea, Checkbox, Radio, Toggle
+├── stories/      Storybook stories (incl. 3 KendoReact components)
+├── layout/       App shell — MainLayout, MainHeader, Sidebar
+├── pages/        ComponentsDemo (demo page)
+├── icons/        SVG sprite icon system
+└── scss/         The StyleBase system (see Styling)
+```
+
+Components use React 19's ref-as-prop pattern and consume only StyleBase semantic
+tokens, so they stay theme-aware (light/dark) without per-component overrides.
+
+The KendoReact theme is scoped to only the components in use, keeping the CSS
+bundle lean (see `src/scss/vendor/`).
+
+---
+
+## Styling — StyleBase
+
+The full SCSS system lives under `src/scss/` (tokens, abstracts, base, components,
+layout, utilities) on a layered cascade: `reset, base, plugins, components, utilities`.
+
+- **Architecture & rules:** [`AGENTS.md`](AGENTS.md) — the canonical StyleBase rules enforced in this repo (also read by Claude Code via `CLAUDE.md`, and by Cursor via `.cursor/rules/`).
+- **Full StyleBase docs:** https://github.com/sharathdaniel/style-base
+- **Adopting StyleBase elsewhere:** [`INSTALLATION.md`](INSTALLATION.md)
 
 ---
 
 ## Tooling
 
-### Recommended Scripts
+- **Stylelint** + **Prettier** — SCSS linting and formatting
+- **Husky** + **lint-staged** — pre-commit enforcement
+- **LF line endings** — enforced via `.gitattributes`, `.editorconfig`, and Prettier
 
-```json
-{
-  "scripts": {
-    "lint:scss": "stylelint \"src/**/*.scss\"",
-    "format:check": "prettier --check \"src/**/*.{scss,ts,tsx,js,jsx,html,json}\"",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "src/**/*.scss": ["stylelint --fix", "prettier --write"],
-    "src/**/*.{ts,tsx,js,jsx,html,json}": ["prettier --write"]
-  }
-}
-```
-
-### Quality Stack
-
-- Stylelint for SCSS linting
-- Prettier for formatting
-- Husky + lint-staged for pre-commit enforcement
-
-### Editor Setup
-
-Recommended VS Code extensions:
-
-- Prettier
-- Stylelint
-- SonarLint (optional, for additional static analysis)
-
-### AI Assistants
-
-StyleBase includes architecture rules formatted for popular AI coding assistants. When adopting StyleBase, you can safely append your own framework-specific instructions to these files:
-
-- `AGENTS.md` - Canonical source. Read automatically by Codex, Aider, Antigravity, Zed, and other agent CLI tools
-- `CLAUDE.md` - Imports `AGENTS.md` via `@AGENTS.md`. Read automatically by Claude Code
-- `.cursor/rules/stylebase.mdc` - Read automatically by Cursor
-
-### Git & Line Endings
-
-This repository uses `LF` line endings across text files.
-Using LF avoids cross-platform diffs, keeps commits cleaner, and matches most tooling and CI/Linux environments by default.
-
-- `.gitattributes` enforces LF (`* text=auto eol=lf`)
-- `.editorconfig` sets `end_of_line = lf`
-- Prettier uses `endOfLine: "lf"`
-
-Recommended Git setup for this repository only:
+For this repo only:
 
 ```bash
 git config core.autocrlf false
 git config core.eol lf
 ```
 
-If your working tree has mixed line endings:
+---
 
-```bash
-git add --renormalize .
-npx prettier --write .
-```
+## AI-Assisted Development (Storybook MCP)
+
+`@storybook/addon-mcp` exposes a Model Context Protocol server while Storybook runs
+(`http://localhost:6006/mcp`, registered in `.mcp.json`). AI coding agents can use it
+to discover the real component APIs before generating UI — see the discovery rules in
+[`AGENTS.md`](AGENTS.md).
 
 ---
 
-## Reference Implementation
+## License
 
-The repository includes a React application (Vite + Storybook)
-demonstrating how StyleBase can be consumed in a real project.
-
-The reference app illustrates:
-
-- Token-driven component styling
-- Layered override strategy
-- SVG sprite-based icon usage
-- Accessibility considerations
-
-StyleBase itself remains framework-agnostic and can be used with
-React, Angular, Vue, or any modern frontend stack.
+Released under the **Zero-Clause BSD License (0BSD)** — see [LICENSE](LICENSE).
