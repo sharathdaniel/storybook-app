@@ -1,0 +1,110 @@
+/*
+ * Usage example:
+ * <div class="u-flex-row">
+ *   <div class="u-col-12 u-col-lg-6">Item 1</div>
+ *   <div class="u-col-12 u-col-lg-6">Item 2</div>
+ * </div>
+ *
+ * Nesting is supported, but never combine u-flex-row and u-col-* on
+ * the same element - start the inner row inside a u-col-* wrapper:
+ * <div class="u-col-6"><div class="u-flex-row">...</div></div>
+ */
+
+@use 'sass:math';
+@use '../abstracts/mixins/breakpoint' as *;
+@use '../abstracts/scales' as *;
+
+/* Configuration */
+
+$flex-columns: 12 !default;
+$flex-gap: var(--space-4) !default;
+
+/* Flex row */
+
+.u-flex-row {
+  --row-gap: initial;
+  --column-gap: initial;
+  --gap: #{$flex-gap};
+  --flex-row-gap: var(--row-gap, var(--gap));
+  --flex-column-gap: var(--column-gap, var(--gap));
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-row-gap) var(--flex-column-gap);
+
+  > * {
+    min-width: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @each $key, $val in $space-scale {
+    &.u-gap-#{$key} {
+      --gap: #{$val};
+    }
+
+    &.u-col-gap-#{$key} {
+      --column-gap: #{$val};
+    }
+
+    &.u-row-gap-#{$key} {
+      --row-gap: #{$val};
+    }
+  }
+
+  /* Flex column widths */
+
+  @mixin make-flex-columns($infix: null) {
+    $prefix: '';
+
+    @if $infix {
+      $prefix: '-#{$infix}';
+    }
+
+    @for $i from 1 through $flex-columns {
+      > .u-col#{$prefix}-#{$i} {
+        $multiplier: math.div($i, $flex-columns);
+
+        flex-basis: calc((100% * #{$multiplier}) - (var(--flex-column-gap) * (1 - #{$multiplier})));
+        max-width: calc((100% * #{$multiplier}) - (var(--flex-column-gap) * (1 - #{$multiplier})));
+      }
+    }
+
+    > .u-col#{$prefix}-auto {
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+
+    > .u-col#{$prefix}-fill {
+      flex: 1 1 0%;
+    }
+  }
+
+  /* Base */
+  @include make-flex-columns;
+
+  /* sm and up: ≥ 640px */
+  @include breakpoint-up(sm) {
+    @include make-flex-columns('sm');
+  }
+
+  /* md and up: ≥ 768px */
+  @include breakpoint-up(md) {
+    @include make-flex-columns('md');
+  }
+
+  /* lg and up: ≥ 1024px */
+  @include breakpoint-up(lg) {
+    @include make-flex-columns('lg');
+  }
+
+  /* xl and up: ≥ 1280px */
+  @include breakpoint-up(xl) {
+    @include make-flex-columns('xl');
+  }
+
+  /* 2xl and up: ≥ 1536px */
+  @include breakpoint-up(2xl) {
+    @include make-flex-columns('2xl');
+  }
+}

@@ -1,0 +1,23 @@
+/// Convert pixels to rem.
+/// Use directly in CSS: margin: rem(4) rem(8).
+/// When assigning to CSS vars, interpolate exactly like: --space-4: #{rem(16)}.
+/// Do not use for 1px values, e.g. border: 1px or width: 1px.
+
+@use 'sass:math';
+@use 'sass:meta';
+
+@function rem($px) {
+  @if meta.type-of($px) != 'number' {
+    @error "rem(): Expected a number, got `#{$px}`.";
+  }
+
+  @if not math.is-unitless($px) {
+    @error "rem(): Expected a unitless number, got `#{$px}`. Do not pass units.";
+  }
+
+  @if $px == 1 {
+    @error "rem(): Do not use rem(1). Use 1px directly.";
+  }
+
+  @return math.div($px, 16) * 1rem;
+}

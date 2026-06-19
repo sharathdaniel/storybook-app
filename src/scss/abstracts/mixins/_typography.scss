@@ -1,0 +1,74 @@
+@use 'sass:list';
+@use 'sass:map';
+
+/* Typography variants (system roles) */
+
+$typography-variants: (
+  /* Headings */
+  h-md: (
+      size: var(--fs-lg),
+      line: var(--lh-normal),
+    ),
+  h-lg: (
+    size: var(--fs-2xl),
+    line: var(--lh-normal),
+  ),
+  h-xl: (
+    size: var(--fs-3xl),
+    line: var(--lh-normal),
+  ),
+  h-2xl: (
+    size: var(--fs-4xl),
+    line: var(--lh-normal),
+  ),
+  h-3xl: (
+    size: var(--fs-5xl),
+    line: var(--lh-tight),
+  ),
+  /* Body text */
+  body-md: (
+      size: var(--fs-md),
+      line: var(--lh-body),
+    ),
+  body-sm: (
+    size: var(--fs-label),
+    line: var(--lh-body),
+  ),
+
+  /* UI text */
+  ui-md: (
+      size: var(--fs-md),
+      line: var(--lh-normal),
+    ),
+  ui-sm: (
+    size: var(--fs-label),
+    line: var(--lh-normal),
+  ),
+  ui-xs: (
+    size: var(--fs-sm),
+    line: var(--lh-normal),
+  )
+);
+
+/* Internal mixins (private API) */
+
+@mixin text-style($variant) {
+  $props: map.get($typography-variants, $variant);
+
+  @if not $props {
+    @error "Unknown typography variant: #{$variant}";
+  }
+
+  font-size: map.get($props, size);
+  line-height: map.get($props, line);
+}
+
+@mixin text-weight($weight) {
+  $valid-weights: normal, medium, bold;
+
+  @if not list.index($valid-weights, $weight) {
+    @error "text-weight(): Unknown weight `#{$weight}`. Expected one of: #{$valid-weights}.";
+  }
+
+  font-weight: var(--fw-#{$weight});
+}

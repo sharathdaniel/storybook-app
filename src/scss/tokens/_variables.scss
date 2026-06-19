@@ -1,0 +1,32 @@
+:root {
+  --app-header-height: 3.125rem;
+  --app-sidebar-width: 4.375rem;
+
+  /* Transitions */
+  --transition-1: 0.15s ease-in-out;
+  --transition-2: 0.3s ease;
+  --transition-3: 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+
+  /* Border radius */
+  --radius-xs: 0.125rem; /* 2px */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
+
+  /* Form item heights */
+  --form-item-height-xs: 1rem; /* 16px */
+  --form-item-height-sm: 1.5rem; /* 24px */
+  --form-item-height-md: 1.875rem; /* 30px */
+  --form-item-height-lg: 2.25rem; /* 36px */
+  --form-item-height-xl: 2.75rem; /* 44px */
+
+  /* Focus ring */
+  --focus-ring-size: 2px;
+
+  /* Scrollbar */
+  --scrollbar-track-default: transparent;
+  --scrollbar-track: var(--scrollbar-track-default);
+  --scrollbar-width: thin;
+}

@@ -1,0 +1,124 @@
+/*
+ * Usage example:
+ * <div class="u-grid-row">
+ *   <div class="u-col-12 u-col-lg-6">Item 1</div>
+ *   <div class="u-col-12 u-col-lg-6">Item 2</div>
+ * </div>
+ * Creates a 12-column grid with token-based gaps.
+ *
+ * Nesting is supported; gaps never leak into nested rows. Prefer
+ * starting the inner row inside a u-col-* wrapper:
+ * <div class="u-col-6"><div class="u-grid-row">...</div></div>
+ */
+
+@use 'sass:math';
+@use '../abstracts/functions/rem' as *;
+@use '../abstracts/mixins/breakpoint' as *;
+
+/* Configuration */
+
+$grid-columns: 12 !default;
+$grid-gap: var(--space-4) !default;
+
+/* Grid container */
+
+:where(.u-grid-row) {
+  gap: #{$grid-gap};
+}
+
+.u-grid-row {
+  display: grid;
+  grid-template-columns: repeat(#{$grid-columns}, minmax(0, 1fr));
+
+  > [class*='u-col-'] {
+    grid-column: span #{$grid-columns};
+  }
+
+  /* Grid column mixin */
+
+  /* stylelint-disable declaration-block-no-redundant-longhand-properties */
+
+  @mixin make-grid-columns($infix: null) {
+    $prefix: '';
+
+    @if $infix {
+      $prefix: '-#{$infix}';
+    }
+
+    > .u-col#{$prefix}-full {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+
+    @for $i from 1 through $grid-columns {
+      > .u-col#{$prefix}-#{$i} {
+        grid-column-start: auto;
+        grid-column-end: span #{$i};
+      }
+
+      @if ($grid-columns - $i) % 2 == 0 {
+        > .u-col#{$prefix}-#{$i}-center {
+          grid-column-end: span #{$i};
+          grid-column-start: #{math.div($grid-columns - $i, 2) + 1};
+        }
+      }
+    }
+
+    @for $i from 1 through $grid-columns {
+      > .u-col-start#{$prefix}-#{$i} {
+        grid-column-start: #{$i};
+      }
+    }
+
+    > .u-col-end#{$prefix}-last {
+      grid-column-end: -1;
+    }
+  }
+
+  /* stylelint-enable declaration-block-no-redundant-longhand-properties */
+
+  /* Column span utilities */
+
+  /* Base: < 640px */
+  @include make-grid-columns;
+
+  /* sm and up: ≥ 640px */
+  @include breakpoint-up(sm) {
+    @include make-grid-columns('sm');
+  }
+
+  /* md and up: ≥ 768px */
+  @include breakpoint-up(md) {
+    @include make-grid-columns('md');
+  }
+
+  /* lg and up: ≥ 1024px */
+  @include breakpoint-up(lg) {
+    @include make-grid-columns('lg');
+  }
+
+  /* xl and up: ≥ 1280px */
+  @include breakpoint-up(xl) {
+    @include make-grid-columns('xl');
+  }
+
+  /* 2xl and up: ≥ 1536px */
+  @include breakpoint-up(2xl) {
+    @include make-grid-columns('2xl');
+  }
+}
+
+/* Auto-fit and auto-fill grid helpers */
+
+/* Default minimum column width. Override per-instance via --grid-auto-min */
+$grid-auto-min: rem(256) !default;
+
+/* Auto-fit: collapses empty tracks */
+.u-grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-auto-min, #{$grid-auto-min}), 1fr));
+}
+
+/* Auto-fill: preserves empty tracks */
+.u-grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-auto-min, #{$grid-auto-min}), 1fr));
+}

@@ -1,0 +1,110 @@
+/*
+ * Breakpoint mixins.
+ * For one-off custom breakpoints, prefer modern range syntax:
+ * @media (width <= 640px) { ... }  max-width
+ * @media (width >= 1280px) { ... } min-width
+ */
+
+@use 'sass:map';
+@use 'sass:list';
+
+$breakpoints: (
+  base: 0px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+);
+
+/* Core logic mixins */
+
+/* Min-width: target $size and everything larger. */
+@mixin breakpoint-up($size) {
+  @if not map.has-key($breakpoints, $size) {
+    @error "Breakpoint #{$size} not found. Available: #{map.keys($breakpoints)}";
+  }
+
+  $min-width: map.get($breakpoints, $size);
+
+  @media (width >= $min-width) {
+    @content;
+  }
+}
+
+/* Max-width: target $size and everything smaller. */
+@mixin breakpoint-down($size) {
+  @if not map.has-key($breakpoints, $size) {
+    @error "Breakpoint #{$size} not found. Available: #{map.keys($breakpoints)}";
+  }
+
+  $keys: map.keys($breakpoints);
+  $index: list.index($keys, $size);
+
+  @if $index < list.length($keys) {
+    $next-size: list.nth($keys, $index + 1);
+    $next-min: map.get($breakpoints, $next-size);
+
+    @media (width < $next-min) {
+      @content;
+    }
+  } @else {
+    @error "breakpoint-down(#{$size}) is invalid because '#{$size}' is the largest breakpoint.";
+  }
+}
+
+@mixin breakpoint-between($lower, $upper) {
+  @if not map.has-key($breakpoints, $lower) or not map.has-key($breakpoints, $upper) {
+    @error "Breakpoint range [#{$lower}, #{$upper}] contains a key that does not exist. Available: #{map.keys($breakpoints)}";
+  }
+
+  $keys: map.keys($breakpoints);
+  $lower-index: list.index($keys, $lower);
+  $upper-index: list.index($keys, $upper);
+
+  @if $lower-index > $upper-index {
+    @error "Invalid breakpoint range: '#{$lower}' comes after '#{$upper}'. " + "Ensure your lower bound is smaller than your upper bound.";
+  }
+
+  @if $lower == base and $lower != $upper {
+    @warn "breakpoint-between(base, #{$upper}) is redundant. Use breakpoint-down(#{$upper}) instead.";
+  }
+
+  $min-width: map.get($breakpoints, $lower);
+
+  @if $upper-index < list.length($keys) {
+    $next-size: list.nth($keys, $upper-index + 1);
+    $next-min: map.get($breakpoints, $next-size);
+
+    @media (width >= $min-width) and (width < $next-min) {
+      @content;
+    }
+  } @else {
+    @media (width >= $min-width) {
+      @content;
+    }
+  }
+}
+
+/* Single range bucket (e.g. base only, md only); for 2xl this resolves to an open-ended range. */
+@mixin breakpoint-only($size) {
+  @include breakpoint-between($size, $size) {
+    @content;
+  }
+}
+
+/* Interaction and capability helpers */
+
+/* Targets devices with a fine pointer that support hover (helps distinguish tablets from small laptops). */
+@mixin has-hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+/* Targets touch-first devices (coarse pointer) */
+@mixin is-touch {
+  @media (pointer: coarse) and (hover: none) and (any-hover: none) {
+    @content;
+  }
+}

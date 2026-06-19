@@ -1,0 +1,653 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "App",
+            "id": "component-App-b6be340e3c3cee12af8740d161b3adc02ff66aa4e456a065144a48a8608369f1ed9ea2d566367f10b1594a5e6a6bc49d1697f5a317352650bc83239b4a9c4581",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "signal('storybook')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "IconRegistryComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { IconRegistryComponent } from './icons/icon-registry.component';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.html',\n  imports: [RouterOutlet, IconRegistryComponent],\n  styleUrl: './app.scss',\n})\nexport class App {\n  protected readonly title = signal('storybook');\n}\n",
+            "styleUrl": "./app.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<router-outlet />\n<app-icon-registry class=\"u-d-none\"></app-icon-registry>\n"
+        },
+        {
+            "name": "Components",
+            "id": "component-Components-052d14b81c7a98919e1f9aec442281bfc51aecfcf9024e1b69414cf85136863c292d33f2bb09351837acba17ecf20e850018c1b3b8465c40bec71d0d81012de1",
+            "file": "src/app/pages/demo/components/components.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-components",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./components.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { IconComponent } from '../../../icons/icon.component';\n\n@Component({\n  selector: 'app-components',\n  imports: [IconComponent],\n  templateUrl: './components.html',\n  styleUrl: './components.scss',\n})\nexport class Components {}\n",
+            "styleUrl": "./components.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"app-c-page-scroll u-scrollbar\">\n  <h1 class=\"u-mb-2\">Components</h1>\n  <p class=\"u-mb-4\">\n    A minimal set of reference primitives built on the StyleBase token system. Fork them, extend\n    them, or use them as a blueprint for your own components.\n  </p>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Buttons</h2>\n\n    <h3 class=\"u-mb-2\">Primary</h3>\n    <div class=\"demo-row\">\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-sm\">Small</button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-md\">Medium</button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-lg\">Large</button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-xl\">Extra Large</button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-md\" disabled>Disabled</button>\n    </div>\n\n    <h3 class=\"u-mb-2\">Secondary</h3>\n    <div class=\"demo-row\">\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-sm\">Small</button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-md\">Medium</button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-lg\">Large</button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-xl\">Extra Large</button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-md\" disabled>Disabled</button>\n    </div>\n\n    <h3 class=\"u-mb-2\">Tertiary</h3>\n    <div class=\"demo-row\">\n      <button class=\"app-c-btn app-c-btn-tertiary app-c-btn-sm\">Small</button>\n      <button class=\"app-c-btn app-c-btn-tertiary app-c-btn-md\">Medium</button>\n      <button class=\"app-c-btn app-c-btn-tertiary app-c-btn-lg\">Large</button>\n      <button class=\"app-c-btn app-c-btn-tertiary app-c-btn-xl\">Extra Large</button>\n      <button class=\"app-c-btn app-c-btn-tertiary app-c-btn-md\" disabled>Disabled</button>\n    </div>\n\n    <h3 class=\"u-mb-2\">With Leading Icon</h3>\n    <div class=\"demo-row\">\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-sm\">\n        <app-icon name=\"icon-home\" class=\"app-c-icon\"></app-icon>\n        Small\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-md\">\n        <app-icon name=\"icon-home\" class=\"app-c-icon\"></app-icon>\n        Medium\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-lg\">\n        <app-icon name=\"icon-home\" class=\"app-c-icon\"></app-icon>\n        Large\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-xl\">\n        <app-icon name=\"icon-home\" class=\"app-c-icon\"></app-icon>\n        Extra Large\n      </button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-md\">\n        <app-icon name=\"icon-user\" class=\"app-c-icon\"></app-icon>\n        Profile\n      </button>\n      <button class=\"app-c-btn app-c-btn-tertiary app-c-btn-md\">\n        <app-icon name=\"icon-home\" class=\"app-c-icon\"></app-icon>\n        Home\n      </button>\n    </div>\n\n    <h3 class=\"u-mb-2\">With Trailing Icon</h3>\n    <div class=\"demo-row\">\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-sm\">\n        Small\n        <app-icon name=\"icon-user\" class=\"app-c-icon\"></app-icon>\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-md\">\n        Medium\n        <app-icon name=\"icon-user\" class=\"app-c-icon\"></app-icon>\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-lg\">\n        Large\n        <app-icon name=\"icon-user\" class=\"app-c-icon\"></app-icon>\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-xl\">\n        Extra Large\n        <app-icon name=\"icon-user\" class=\"app-c-icon\"></app-icon>\n      </button>\n    </div>\n\n    <h3 class=\"u-mb-2\">Icon Buttons</h3>\n    <div class=\"demo-row\">\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-icon-xs\" aria-label=\"Extra small icon\">\n        XS\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-icon-sm\" aria-label=\"Small icon\">\n        S\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-icon-md\" aria-label=\"Medium icon\">\n        M\n      </button>\n      <button class=\"app-c-btn app-c-btn-primary app-c-btn-icon-lg\" aria-label=\"Large icon\">\n        L\n      </button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-icon-xs\" aria-label=\"Extra small icon\">\n        XS\n      </button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-icon-sm\" aria-label=\"Small icon\">\n        S\n      </button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-icon-md\" aria-label=\"Medium icon\">\n        M\n      </button>\n      <button class=\"app-c-btn app-c-btn-secondary app-c-btn-icon-lg\" aria-label=\"Large icon\">\n        L\n      </button>\n    </div>\n  </section>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Text Fields</h2>\n\n    <h3 class=\"u-mb-2\">Input Sizes</h3>\n    <div class=\"demo-stack\">\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-sm\"\n        placeholder=\"Small input\"\n        aria-label=\"Small input\"\n      />\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-md\"\n        placeholder=\"Medium input\"\n        aria-label=\"Medium input\"\n      />\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-lg\"\n        placeholder=\"Large input\"\n        aria-label=\"Large input\"\n      />\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-xl\"\n        placeholder=\"Extra Large input\"\n        aria-label=\"Extra Large input\"\n      />\n    </div>\n\n    <h3 class=\"u-mb-2\">States</h3>\n    <div class=\"demo-stack\">\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-md\"\n        value=\"Default\"\n        aria-label=\"Default input\"\n      />\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-md app-c-textfield-error\"\n        value=\"Error state\"\n        aria-label=\"Error input\"\n      />\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-md\"\n        readonly\n        value=\"Readonly\"\n        aria-label=\"Readonly input\"\n      />\n      <input\n        type=\"text\"\n        class=\"app-c-textfield app-c-textfield-md\"\n        disabled\n        value=\"Disabled\"\n        aria-label=\"Disabled input\"\n      />\n    </div>\n\n    <h3 class=\"u-mb-2\">Textarea</h3>\n    <div class=\"demo-stack\">\n      <textarea\n        class=\"app-c-textfield app-c-textarea\"\n        rows=\"3\"\n        placeholder=\"Write something...\"\n        aria-label=\"Default textarea\"\n      ></textarea>\n      <textarea\n        class=\"app-c-textfield app-c-textarea app-c-textfield-error\"\n        rows=\"3\"\n        placeholder=\"Error textarea...\"\n        aria-label=\"Error textarea\"\n      ></textarea>\n      <textarea\n        class=\"app-c-textfield app-c-textarea\"\n        rows=\"3\"\n        disabled\n        placeholder=\"Disabled textarea...\"\n        aria-label=\"Disabled textarea\"\n      ></textarea>\n    </div>\n  </section>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Checkboxes</h2>\n\n    <div class=\"demo-row\">\n      <label class=\"app-c-checkbox\">\n        <input type=\"checkbox\" aria-label=\"Unchecked\" />\n        <span class=\"app-c-checkbox-text\">Unchecked</span>\n      </label>\n\n      <label class=\"app-c-checkbox\">\n        <input type=\"checkbox\" checked aria-label=\"Checked\" />\n        <span class=\"app-c-checkbox-text\">Checked</span>\n      </label>\n\n      <label class=\"app-c-checkbox\">\n        <input type=\"checkbox\" disabled aria-label=\"Disabled\" />\n        <span class=\"app-c-checkbox-text\">Disabled</span>\n      </label>\n\n      <label class=\"app-c-checkbox\">\n        <input type=\"checkbox\" checked disabled aria-label=\"Checked disabled\" />\n        <span class=\"app-c-checkbox-text\">Checked disabled</span>\n      </label>\n    </div>\n  </section>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Radio Buttons</h2>\n\n    <div class=\"demo-row\">\n      <label class=\"app-c-radio\">\n        <input type=\"radio\" name=\"demo-radio\" value=\"a\" checked aria-label=\"Option A\" />\n        <span class=\"app-c-radio-text\">Option A</span>\n      </label>\n\n      <label class=\"app-c-radio\">\n        <input type=\"radio\" name=\"demo-radio\" value=\"b\" aria-label=\"Option B\" />\n        <span class=\"app-c-radio-text\">Option B</span>\n      </label>\n\n      <label class=\"app-c-radio\">\n        <input type=\"radio\" name=\"demo-radio\" value=\"c\" aria-label=\"Option C\" />\n        <span class=\"app-c-radio-text\">Option C</span>\n      </label>\n\n      <label class=\"app-c-radio\">\n        <input type=\"radio\" name=\"demo-disabled\" value=\"d\" disabled aria-label=\"Disabled\" />\n        <span class=\"app-c-radio-text\">Disabled</span>\n      </label>\n\n      <label class=\"app-c-radio\">\n        <input\n          type=\"radio\"\n          name=\"demo-disabled-checked\"\n          value=\"e\"\n          checked\n          disabled\n          aria-label=\"Checked disabled\"\n        />\n        <span class=\"app-c-radio-text\">Checked disabled</span>\n      </label>\n    </div>\n  </section>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Toggle Switches</h2>\n\n    <div class=\"demo-row\">\n      <label class=\"app-c-toggle\">\n        <input type=\"checkbox\" aria-label=\"Off\" />\n        <span class=\"app-c-toggle-text\">Off</span>\n      </label>\n\n      <label class=\"app-c-toggle\">\n        <input type=\"checkbox\" checked aria-label=\"On\" />\n        <span class=\"app-c-toggle-text\">On</span>\n      </label>\n\n      <label class=\"app-c-toggle\">\n        <input type=\"checkbox\" disabled aria-label=\"Disabled off\" />\n        <span class=\"app-c-toggle-text\">Disabled</span>\n      </label>\n\n      <label class=\"app-c-toggle\">\n        <input type=\"checkbox\" checked disabled aria-label=\"Disabled on\" />\n        <span class=\"app-c-toggle-text\">Disabled on</span>\n      </label>\n    </div>\n  </section>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Badges</h2>\n\n    <div class=\"demo-row\">\n      <span class=\"app-c-badge\">Neutral</span>\n      <span class=\"app-c-badge app-c-badge-success\">Success</span>\n      <span class=\"app-c-badge app-c-badge-error\">Error</span>\n      <span class=\"app-c-badge app-c-badge-warning\">Warning</span>\n      <span class=\"app-c-badge app-c-badge-info\">Info</span>\n    </div>\n  </section>\n\n  <section class=\"demo-section\">\n    <h2 class=\"u-mb-3\">Groups</h2>\n\n    <h3 class=\"u-mb-2\">Button Group</h3>\n    <div class=\"demo-row\">\n      <div class=\"app-c-btn-group\">\n        <button class=\"app-c-btn app-c-btn-secondary app-c-btn-sm\">Left</button>\n        <button class=\"app-c-btn app-c-btn-secondary app-c-btn-sm\">Center</button>\n        <button class=\"app-c-btn app-c-btn-secondary app-c-btn-sm\">Right</button>\n      </div>\n      <div class=\"app-c-btn-group\">\n        <button class=\"app-c-btn app-c-btn-secondary app-c-btn-md\">Left</button>\n        <button class=\"app-c-btn app-c-btn-secondary app-c-btn-md\">Center</button>\n        <button class=\"app-c-btn app-c-btn-secondary app-c-btn-md\">Right</button>\n      </div>\n    </div>\n\n    <h3 class=\"u-mb-2\">Input Group</h3>\n    <div class=\"demo-stack\">\n      <div class=\"app-c-input-group\">\n        <input\n          type=\"text\"\n          class=\"app-c-textfield app-c-textfield-md\"\n          placeholder=\"First name\"\n          aria-label=\"First name\"\n        />\n        <input\n          type=\"text\"\n          class=\"app-c-textfield app-c-textfield-md\"\n          placeholder=\"Last name\"\n          aria-label=\"Last name\"\n        />\n      </div>\n    </div>\n\n    <h3 class=\"u-mb-2\">Mixed (Input + Button)</h3>\n    <div class=\"demo-stack\">\n      <div class=\"app-c-input-group\">\n        <input\n          type=\"text\"\n          class=\"app-c-textfield app-c-textfield-md\"\n          placeholder=\"Search...\"\n          aria-label=\"Search\"\n        />\n        <button class=\"app-c-btn app-c-btn-primary app-c-btn-md\">Search</button>\n      </div>\n    </div>\n  </section>\n</div>\n"
+        },
+        {
+            "name": "IconComponent",
+            "id": "component-IconComponent-8c63985b506646995031aea907163ed7a7a5e8b097a6ef4cab09c7aa50b31192a34e373c612b7e78fa6729275e2f71d2421b4ed6018e3d6a10ff9e126b36a496",
+            "file": "src/app/icons/icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<svg\n  class=\"app-c-svg-icon\"\n  focusable=\"false\"\n  [attr.role]=\"ariaLabel() ? 'img' : null\"\n  [attr.aria-hidden]=\"ariaLabel() ? null : 'true'\"\n  [attr.aria-label]=\"ariaLabel()\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n>\n  <use [attr.href]=\"'#' + name()\"></use>\n</svg>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Accessibility:</p>\n<ul>\n<li>Use <code>ariaLabel</code> ONLY for standalone / status icons</li>\n<li>NEVER use <code>ariaLabel</code> when icon is inside a button or link</li>\n</ul>\n",
+                    "line": 25,
+                    "rawdescription": "\n\nAccessibility:\n- Use `ariaLabel` ONLY for standalone / status icons\n- NEVER use `ariaLabel` when icon is inside a button or link\n",
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        148
+                    ],
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input } from '@angular/core';\n\n@Component({\n  selector: 'app-icon',\n  template: `\n    <svg\n      class=\"app-c-svg-icon\"\n      focusable=\"false\"\n      [attr.role]=\"ariaLabel() ? 'img' : null\"\n      [attr.aria-hidden]=\"ariaLabel() ? null : 'true'\"\n      [attr.aria-label]=\"ariaLabel()\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <use [attr.href]=\"'#' + name()\"></use>\n    </svg>\n  `,\n})\nexport class IconComponent {\n  readonly name = input.required<string>();\n  /**\n   * Accessibility:\n   * - Use `ariaLabel` ONLY for standalone / status icons\n   * - NEVER use `ariaLabel` when icon is inside a button or link\n   */\n  readonly ariaLabel = input<string>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "IconRegistryComponent",
+            "id": "component-IconRegistryComponent-28df212fa6302dba15a6a836ea00bba50a7fa07e7bc3f082414b46b2656e9b7d649ac03767eb3d7ff20bce6f7124f7062d5d39ec4b5217969e31c6dd4f99b957",
+            "file": "src/app/icons/icon-registry.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon-registry",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./icon-registry.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-icon-registry',\n  templateUrl: './icon-registry.component.html',\n})\nexport class IconRegistryComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<svg xmlns=\"http://www.w3.org/2000/svg\">\n  <symbol id=\"icon-home\" viewBox=\"0 0 24 24\" fill=\"none\">\n    <path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\" fill=\"currentColor\" />\n  </symbol>\n  <symbol id=\"icon-user\" viewBox=\"0 0 16 16\" fill=\"none\">\n    <circle cx=\"8\" cy=\"5\" r=\"4\" fill=\"currentColor\" />\n    <path d=\"M2 14c0-4 4-5 6-5s6 1 6 5\" fill=\"currentColor\" />\n  </symbol>\n</svg>\n"
+        },
+        {
+            "name": "MainHeader",
+            "id": "component-MainHeader-d2becb895cc31387c6db7a941525b2c65b59b4eef66b28114933bd25ab3c41fe0e49f98110166a73c61162fb2a103f395ffe83f60cf1f46be6ada5ec8fdb1868",
+            "file": "src/app/layout/main-header/main-header.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-main-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main-header.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "darkQuery",
+                    "defaultValue": "globalThis.matchMedia('(prefers-color-scheme: dark)')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                },
+                {
+                    "name": "onSystemThemeChange",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                },
+                {
+                    "name": "theme",
+                    "defaultValue": "signal<'light' | 'dark'>('light')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                },
+                {
+                    "name": "themeStorageKey",
+                    "defaultValue": "'storybook-theme'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyTheme",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "\"light\" | \"dark\"",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "persist",
+                            "type": "boolean",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "\"light\" | \"dark\"",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "persist",
+                            "type": "boolean",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "RouterLink"
+                },
+                {
+                    "name": "RouterLinkActive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit, signal } from '@angular/core';\nimport { RouterLink, RouterLinkActive } from '@angular/router';\n\n@Component({\n  selector: 'app-main-header',\n  imports: [RouterLink, RouterLinkActive],\n  templateUrl: './main-header.html',\n  styleUrl: './main-header.scss',\n})\nexport class MainHeader implements OnInit, OnDestroy {\n  protected readonly theme = signal<'light' | 'dark'>('light');\n\n  private readonly themeStorageKey = 'storybook-theme';\n  private readonly darkQuery = globalThis.matchMedia('(prefers-color-scheme: dark)');\n  private readonly onSystemThemeChange = (e: MediaQueryListEvent): void => {\n    this.applyTheme(e.matches ? 'dark' : 'light', false);\n  };\n\n  ngOnInit(): void {\n    const savedTheme = localStorage.getItem(this.themeStorageKey);\n    let resolvedTheme: 'light' | 'dark' = 'light';\n\n    if (savedTheme === 'dark' || savedTheme === 'light') {\n      resolvedTheme = savedTheme;\n    } else {\n      if (this.darkQuery.matches) {\n        resolvedTheme = 'dark';\n      }\n      this.darkQuery.addEventListener('change', this.onSystemThemeChange);\n    }\n\n    this.applyTheme(resolvedTheme, false);\n  }\n\n  ngOnDestroy(): void {\n    this.darkQuery.removeEventListener('change', this.onSystemThemeChange);\n  }\n\n  protected toggleTheme(): void {\n    this.darkQuery.removeEventListener('change', this.onSystemThemeChange);\n    const nextTheme = this.theme() === 'light' ? 'dark' : 'light';\n    this.applyTheme(nextTheme, true);\n  }\n\n  private applyTheme(theme: 'light' | 'dark', persist: boolean): void {\n    this.theme.set(theme);\n    document.documentElement.dataset['theme'] = theme;\n    if (persist) {\n      localStorage.setItem(this.themeStorageKey, theme);\n    }\n  }\n}\n",
+            "styleUrl": "./main-header.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<a routerLink=\"/\" class=\"app-c-page-title\" aria-label=\"Back to home\">StyleBase</a>\n<nav class=\"app-c-header-nav\" aria-label=\"Demos\">\n  <ul class=\"u-scrollbar\">\n    <li>\n      <a routerLink=\"/\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\"\n        >Components</a\n      >\n    </li>\n  </ul>\n</nav>\n\n<button\n  type=\"button\"\n  class=\"app-c-btn app-c-btn-secondary app-c-btn-sm u-ms-auto\"\n  [attr.aria-label]=\"theme() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'\"\n  (click)=\"toggleTheme()\"\n>\n  {{ theme() === 'dark' ? 'Light mode' : 'Dark mode' }}\n</button>\n"
+        },
+        {
+            "name": "MainLayout",
+            "id": "component-MainLayout-f49888267a0c4db6abeec59a2d955613a810d2a3b1c9c27589c3d650f7502b51009be33a68ade866a26c280e9ee92ba58d274d871a9c63f425cc77336f071b24",
+            "file": "src/app/layout/main-layout/main-layout.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-main-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main-layout.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "MainHeader"
+                },
+                {
+                    "name": "Sidebar"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { MainHeader } from '../main-header/main-header';\nimport { Sidebar } from '../sidebar/sidebar';\n\n@Component({\n  selector: 'app-main-layout',\n  templateUrl: './main-layout.html',\n  styleUrl: './main-layout.scss',\n  imports: [RouterOutlet, MainHeader, Sidebar],\n})\nexport class MainLayout {}\n",
+            "styleUrl": "./main-layout.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<app-main-header></app-main-header>\n<div class=\"app-c-layout-body\">\n  <app-sidebar></app-sidebar>\n  <main class=\"app-c-layout-content u-scrollbar\">\n    <router-outlet />\n  </main>\n</div>\n"
+        },
+        {
+            "name": "Sidebar",
+            "id": "component-Sidebar-7a47f23443af72aa0d93d396469f2d215a1abe723112d54523824c44bb8fa408d833e66d681bf906ad947e7e70631d7972b7b870032645d6be28b68ed98564b4",
+            "file": "src/app/layout/sidebar/sidebar.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-sidebar',\n  templateUrl: './sidebar.html',\n  styleUrl: './sidebar.scss',\n})\nexport class Sidebar {}\n",
+            "styleUrl": "./sidebar.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<span class=\"app-c-sidebar-label\">Sidebar</span>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideBrowserGlobalErrorListeners(),\n  ],\n}"
+            },
+            {
+                "name": "routes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Routes",
+                "defaultValue": "[\n  {\n    path: '',\n    loadComponent: () => \"import('./layout/main-layout/main-layout').then((m) => m.MainLayout)\",\n    children: [\n      {\n        path: '',\n        loadComponent: () =>\n          \"import('./pages/demo/components/components').then((m) => m.Components)\",\n        pathMatch: 'full',\n      },\n    ],\n  },\n]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideBrowserGlobalErrorListeners(),\n  ],\n}"
+                }
+            ],
+            "src/app/app.routes.ts": [
+                {
+                    "name": "routes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Routes",
+                    "defaultValue": "[\n  {\n    path: '',\n    loadComponent: () => \"import('./layout/main-layout/main-layout').then((m) => m.MainLayout)\",\n    children: [\n      {\n        path: '',\n        loadComponent: () =>\n          \"import('./pages/demo/components/components').then((m) => m.Components)\",\n        pathMatch: 'full',\n      },\n    ],\n  },\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 3,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "routes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icons/icon-registry.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconRegistryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/icons/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 33,
+                "coverageCount": "1/3",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/app/layout/main-header/main-header.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/main-layout/main-layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/sidebar/sidebar.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Sidebar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/demo/components/components.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Components",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

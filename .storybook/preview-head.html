@@ -1,0 +1,17 @@
+<!--
+  Injected into the Storybook preview iframe's <head>.
+  Storybook does not use the app's src/index.html, so the web fonts must be
+  loaded here too — otherwise 'Inter' (var(--font-body)) falls back to a system
+  font and components look different than in the real app.
+  Keep these links in sync with src/index.html.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  rel="stylesheet"
+/>

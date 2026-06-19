@@ -1,0 +1,13 @@
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { IconRegistryComponent } from './icons/icon-registry.component';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.html',
+  imports: [RouterOutlet, IconRegistryComponent],
+  styleUrl: './app.scss',
+})
+export class App {
+  protected readonly title = signal('storybook');
+}

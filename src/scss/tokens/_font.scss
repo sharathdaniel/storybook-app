@@ -1,0 +1,50 @@
+:root {
+  /* Font Family */
+  --font-primary: 'Inter';
+  --font-fallbacks:
+    system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Noto Sans',
+    'Liberation Sans', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-body: var(--font-primary), var(--font-fallbacks);
+
+  /* Font weight primitives */
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  /* Semantic font weights */
+  --fw-normal: var(--fw-400);
+  --fw-medium: var(--fw-500);
+  --fw-bold: var(--fw-700);
+
+  /* Line height */
+  --lh-none: 1;
+  --lh-tight: 1.2;
+  --lh-normal: 1.4;
+  --lh-body: 1.5;
+  --lh-relaxed: 1.6;
+
+  /* Font size primitives */
+  --fs-10: 0.625rem; /* 10px */
+  --fs-12: 0.75rem; /* 12px */
+  --fs-13: 0.8125rem; /* 13px */
+  --fs-14: 0.875rem; /* 14px */
+  --fs-16: 1rem; /* 16px */
+  --fs-18: 1.125rem; /* 18px */
+  --fs-20: 1.25rem; /* 20px */
+  --fs-24: 1.5rem; /* 24px */
+  --fs-28: 1.75rem; /* 28px */
+  --fs-32: 2rem; /* 32px */
+
+  /* Semantic font sizes */
+  --fs-xs: var(--fs-10);
+  --fs-sm: var(--fs-12);
+  --fs-label: var(--fs-13);
+  --fs-md: var(--fs-14);
+  --fs-lg: var(--fs-16);
+  --fs-xl: var(--fs-18);
+  --fs-2xl: var(--fs-20);
+  --fs-3xl: var(--fs-24);
+  --fs-4xl: var(--fs-28);
+  --fs-5xl: var(--fs-32);
+}

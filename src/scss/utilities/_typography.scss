@@ -1,0 +1,85 @@
+@use '../abstracts/scales' as *;
+
+.u-fw-normal {
+  font-weight: var(--fw-normal);
+}
+
+.u-fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.u-fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+@each $name, $value in $text-scale {
+  .u-text-#{$name} {
+    font-size: $value;
+  }
+}
+
+.u-lh-none {
+  line-height: var(--lh-none);
+}
+
+.u-lh-tight {
+  line-height: var(--lh-tight);
+}
+
+.u-lh-normal {
+  line-height: var(--lh-normal);
+}
+
+.u-lh-body {
+  line-height: var(--lh-body);
+}
+
+.u-lh-relaxed {
+  line-height: var(--lh-relaxed);
+}
+
+.u-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.u-word-break {
+  overflow-wrap: break-word;
+}
+
+.u-ws-normal {
+  white-space: normal;
+}
+
+.u-ws-nowrap {
+  white-space: nowrap;
+}
+
+.u-ws-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.u-ws-pre-line {
+  white-space: pre-line;
+}
+
+.u-text-start {
+  text-align: start;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-end {
+  text-align: end;
+}
+
+.u-text-underline {
+  text-decoration: underline;
+}
+
+.u-text-uppercase {
+  text-transform: uppercase;
+}

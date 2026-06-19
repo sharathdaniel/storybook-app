@@ -1,0 +1,50 @@
+/*
+ * Styles - main entry point
+ * ... -..
+ */
+
+@use 'sass:meta';
+@layer reset, base, plugins, components, utilities;
+
+/* Reset */
+@include meta.load-css('base/reset');
+
+/* Tokens */
+@include meta.load-css('tokens/colors');
+@include meta.load-css('tokens/font');
+@include meta.load-css('tokens/spacing');
+@include meta.load-css('tokens/icon');
+
+/* Global Variables */
+@include meta.load-css('tokens/variables');
+
+/* Themes */
+@include meta.load-css('tokens/themes/light');
+@include meta.load-css('tokens/themes/dark');
+
+/* Global base styles */
+@include meta.load-css('base/global');
+
+/* Common (Styles common for multiple pages or components) */
+@include meta.load-css('layout/common');
+
+/* Plugins (node_modules) */
+@layer plugins {
+  /* Third-party / vendor CSS only */
+  @include meta.load-css('../../node_modules/@progress/kendo-theme-default/dist/all.css');
+}
+
+/* Components */
+@include meta.load-css('components/typography');
+@include meta.load-css('components/icon');
+@include meta.load-css('components/badge');
+@include meta.load-css('components/button');
+@include meta.load-css('components/textfield');
+@include meta.load-css('components/checkbox');
+@include meta.load-css('components/radio');
+@include meta.load-css('components/toggle');
+@include meta.load-css('components/group');
+@include meta.load-css('components/kendo');
+
+/* Utilities (Always load it last) */
+@include meta.load-css('utilities');

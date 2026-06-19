@@ -1,0 +1,117 @@
+/* Width / Height */
+.u-h-100 {
+  height: 100%;
+}
+
+.u-h-auto {
+  height: auto;
+}
+
+.u-min-h-0 {
+  min-height: 0;
+}
+
+.u-w-100 {
+  width: 100%;
+}
+
+.u-w-auto {
+  width: auto;
+}
+
+.u-min-w-0 {
+  min-width: 0;
+}
+
+/* Display */
+.u-d-none {
+  display: none !important;
+}
+
+.u-d-block {
+  display: block;
+}
+
+.u-d-inline-flex {
+  display: inline-flex;
+}
+
+.u-d-flex {
+  display: flex;
+}
+
+.u-d-grid {
+  display: grid;
+}
+
+/* Direction */
+.u-flex-dir-col {
+  flex-direction: column;
+}
+
+/* Wrapping */
+.u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Alignment */
+.u-items-start {
+  align-items: start;
+}
+
+.u-items-center {
+  align-items: center;
+}
+
+.u-items-end {
+  align-items: end;
+}
+
+.u-justify-start {
+  justify-content: start;
+}
+
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-justify-end {
+  justify-content: end;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-self-start {
+  align-self: start;
+}
+
+.u-self-center {
+  align-self: center;
+}
+
+.u-self-end {
+  align-self: end;
+}
+
+.u-self-stretch {
+  align-self: stretch;
+}
+
+/* Flex sizing */
+.u-flex-1 {
+  flex: 1 1 0%;
+}
+
+.u-flex-auto {
+  flex: 1 1 auto;
+}
+
+.u-shrink-0 {
+  flex-shrink: 0;
+}
+
+.u-grow {
+  flex-grow: 1;
+}

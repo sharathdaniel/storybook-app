@@ -1,0 +1,59 @@
+.u-cursor-pointer {
+  cursor: pointer;
+}
+
+.u-cursor-disabled {
+  cursor: not-allowed;
+}
+
+/* Screen reader only
+   '!important' is used so this stays hidden visually,
+   even if a component sets its own layout styles.
+*/
+.u-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-overflow-auto {
+  overflow: auto;
+}
+
+.u-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.u-border-0 {
+  border: 0;
+}
+
+.u-radius-0 {
+  border-radius: 0;
+}
+
+/* Disable pointer interaction - '!important' ensures clicks are always blocked */
+.u-pointer-none {
+  pointer-events: none !important;
+}
+
+.u-pointer-auto {
+  pointer-events: auto;
+}
+
+@supports (scrollbar-width: auto) {
+  .u-scrollbar {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: var(--scrollbar-width);
+  }
+}

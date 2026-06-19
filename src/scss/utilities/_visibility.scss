@@ -1,0 +1,31 @@
+/* '!important' is used on purpose so hiding always works, even if a component sets its own display value. */
+
+@use '../abstracts/mixins/breakpoint' as *;
+
+/* Hide sm-down: < 768px */
+.u-hidden-sm-down {
+  @include breakpoint-down(sm) {
+    display: none !important;
+  }
+}
+
+/* Hide md only: 768px - <1024px */
+.u-hidden-md {
+  @include breakpoint-only(md) {
+    display: none !important;
+  }
+}
+
+/* Hide md-down: < 1024px */
+.u-hidden-md-down {
+  @include breakpoint-down(md) {
+    display: none !important;
+  }
+}
+
+/* Hide lg-up: >= 1024px */
+.u-hidden-lg-up {
+  @include breakpoint-up(lg) {
+    display: none !important;
+  }
+}
