@@ -28,11 +28,8 @@
 /* Common (Styles common for multiple pages or components) */
 @include meta.load-css('layout/common');
 
-/* Plugins (node_modules) */
-@layer plugins {
-  /* Third-party / vendor CSS only */
-  @include meta.load-css('../../node_modules/@progress/kendo-theme-default/dist/all.css');
-}
+/* Plugins (node_modules) - third-party vendor styles */
+@include meta.load-css('vendor');
 
 /* Components */
 @include meta.load-css('components/typography');
@@ -44,7 +41,7 @@
 @include meta.load-css('components/radio');
 @include meta.load-css('components/toggle');
 @include meta.load-css('components/group');
-@include meta.load-css('components/kendo');
+@include meta.load-css('components/kendo-overrides');
 
 /* Utilities (Always load it last) */
 @include meta.load-css('utilities');

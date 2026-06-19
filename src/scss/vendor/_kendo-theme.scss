@@ -1,0 +1,7 @@
+// Kendo UI for React theme
+@use '../../../node_modules/@progress/kendo-theme-default/scss/datepicker' as datepicker;
+@use '../../../node_modules/@progress/kendo-theme-default/scss/dropdownlist' as dropdownlist;
+@use '../../../node_modules/@progress/kendo-theme-default/scss/numerictextbox' as numerictextbox;
+@include datepicker.kendo-date-picker--styles;
+@include dropdownlist.kendo-dropdown-list--styles;
+@include numerictextbox.kendo-numeric-textbox--styles;

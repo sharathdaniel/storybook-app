@@ -283,8 +283,8 @@ npx prettier --write .
 
 ## Reference Implementation
 
-The repository includes an Angular application demonstrating how
-StyleBase can be consumed in a real project.
+The repository includes a React application (Vite + Storybook)
+demonstrating how StyleBase can be consumed in a real project.
 
 The reference app illustrates:
 
@@ -294,4 +294,4 @@ The reference app illustrates:
 - Accessibility considerations
 
 StyleBase itself remains framework-agnostic and can be used with
-Angular, React, Vue, or any modern frontend stack.
+React, Angular, Vue, or any modern frontend stack.

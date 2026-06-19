@@ -4,7 +4,7 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "start",
+      "script": "dev",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -15,14 +15,14 @@
             "regexp": "(.*?)"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "Local:\\s+https?://"
           }
         }
       }
     },
     {
       "type": "npm",
-      "script": "test",
+      "script": "storybook",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -33,7 +33,7 @@
             "regexp": "(.*?)"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "Local:\\s+https?://"
           }
         }
       }

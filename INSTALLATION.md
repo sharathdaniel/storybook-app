@@ -60,16 +60,20 @@ Architecture rules formatted for AI coding assistants. You can append your own f
 
 These are specific to the StyleBase reference repository:
 
-    src/app/                  Angular reference application
-    angular.json              Angular CLI config
+    src/app/                  React reference application
+    src/components/           React component wrappers for the reference app
+    src/stories/              Storybook stories
+    .storybook/               Storybook configuration
+    vite.config.ts            Vite build config
+    index.html                Vite entry HTML
     tsconfig.*                TypeScript configs
-    package.json              Contains Angular-specific dependencies
+    package.json              Contains React/Storybook/Kendo dependencies
     public/                   Static assets
     README.md                 Repository documentation
     INSTALLATION.md           This setup guide
-    yarn.lock                 Dependency lock file
-    .vscode/launch.json       Angular debugger config
-    .vscode/tasks.json        Angular dev/test tasks
+    package-lock.json         Dependency lock file
+    .vscode/launch.json       Vite/Storybook debugger config
+    .vscode/tasks.json        Vite/Storybook dev tasks
     .github/                  CI/CD workflows for this repository
 
 ---

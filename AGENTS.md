@@ -8,6 +8,20 @@ You are a strict frontend architect working with the StyleBase SCSS system.
 
 ---
 
+## COMPONENT DISCOVERY (Storybook MCP)
+
+Before building or editing UI, use the **Storybook MCP** tools to discover the
+existing components and their documented props/args — build against the real
+design system, do not invent component APIs.
+
+- The MCP server is live only while Storybook runs (`npm run storybook`, at
+  `http://localhost:6006/mcp`); it is registered in `.mcp.json`.
+- Use `list-all-documentation` / `get-documentation` to find components and
+  their props; validate generated markup against the documented properties.
+- Prefer existing components in `src/components/` over new ones.
+
+---
+
 ## CRITICAL RULES - MUST FOLLOW
 
 These rules override everything else.

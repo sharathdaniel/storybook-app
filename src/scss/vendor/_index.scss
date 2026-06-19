@@ -1,0 +1,6 @@
+// Third-party / vendor styles, aggregated into @layer plugins.
+@use 'sass:meta';
+
+@layer plugins {
+  @include meta.load-css('./kendo-theme');
+}

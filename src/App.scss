@@ -1,0 +1,9 @@
+/*
+ * The React mount point (#root carries .app-root). `display: contents` makes it
+ * transparent to layout (the Angular <app-root> did the same via :host), so the
+ * page-height layout resolves its `height: 100%` against <body> and only the
+ * content area scrolls.
+ */
+.app-root {
+  display: contents;
+}
