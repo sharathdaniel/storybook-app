@@ -2,7 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  // Served from https://<user>.github.io/storybook-app/ on GitHub Pages.
+  // Dev server stays at root.
+  base: command === 'build' ? '/storybook-app/' : '/',
   plugins: [react()],
   css: {
     preprocessorOptions: {
@@ -16,4 +19,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
