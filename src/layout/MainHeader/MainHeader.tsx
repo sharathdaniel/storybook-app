@@ -5,6 +5,12 @@ import './MainHeader.scss';
 const THEME_STORAGE_KEY = 'storybook-theme';
 type Theme = 'light' | 'dark';
 
+// In dev, Storybook runs on its own server; in the built/deployed app it's
+// published under the Vite base path at `storybook/`.
+const STORYBOOK_URL = import.meta.env.DEV
+  ? 'http://localhost:6006/'
+  : `${import.meta.env.BASE_URL}storybook/`;
+
 export function MainHeader() {
   // The inline bootstrap script in index.html sets data-theme before paint, so
   // initialise from it - no setState-in-effect needed for the initial value.
@@ -45,6 +51,11 @@ export function MainHeader() {
             <NavLink to="/" end>
               Components
             </NavLink>
+          </li>
+          <li>
+            <a href={STORYBOOK_URL} target="_blank" rel="noopener noreferrer">
+              Storybook
+            </a>
           </li>
         </ul>
       </nav>
