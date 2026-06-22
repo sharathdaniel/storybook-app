@@ -72,7 +72,7 @@ layout, utilities) on a layered cascade: `reset, base, plugins, components, util
 
 - **Architecture & rules:** [`AGENTS.md`](AGENTS.md), the canonical StyleBase rules enforced in this repo (also read by Claude Code via `CLAUDE.md`, and by Cursor via `.cursor/rules/`).
 - **Full StyleBase docs:** https://github.com/sharathdaniel/style-base
-- **Adopting StyleBase elsewhere:** [`INSTALLATION.md`](INSTALLATION.md)
+- **Adopting StyleBase elsewhere:** [StyleBase installation guide](https://github.com/sharathdaniel/style-base/blob/main/INSTALLATION.md)
 
 ---
 
