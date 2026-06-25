@@ -11,6 +11,8 @@ const STORYBOOK_URL = import.meta.env.DEV
   ? 'http://localhost:6006/'
   : `${import.meta.env.BASE_URL}storybook/`;
 
+const GITHUB_URL = 'https://github.com/sharathdaniel/storybook-app';
+
 export function MainHeader() {
   // The inline bootstrap script in index.html sets data-theme before paint, so
   // initialise from it - no setState-in-effect needed for the initial value.
@@ -55,6 +57,11 @@ export function MainHeader() {
           <li>
             <a href={STORYBOOK_URL} target="_blank" rel="noopener noreferrer">
               Storybook
+            </a>
+          </li>
+          <li>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              GitHub
             </a>
           </li>
         </ul>
