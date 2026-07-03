@@ -37,9 +37,10 @@ npm run preview      # preview the production build
 Quality:
 
 ```bash
-npm run lint         # ESLint (TS/React)
+npm run lint         # ESLint (TS/React/stories)
 npm run lint:scss    # Stylelint (SCSS)
 npm run format:check # Prettier check
+npm run test         # Vitest: every story runs as a browser test, incl. axe a11y checks
 ```
 
 ---
@@ -79,7 +80,11 @@ layout, utilities) on a layered cascade: `reset, base, plugins, components, util
 ## Tooling
 
 - **Stylelint** + **Prettier**: SCSS linting and formatting
+- **Vitest** (browser mode, via `@storybook/addon-vitest`): runs every story as a
+  Playwright/Chromium test; a11y violations fail the run (`a11y: { test: 'error' }`)
 - **Husky** + **lint-staged**: pre-commit enforcement
+- **GitHub Actions**: `ci.yml` gates PRs (lint, format, builds, story tests);
+  `deploy.yml` publishes to GitHub Pages
 - **LF line endings**: enforced via `.gitattributes`, `.editorconfig`, and Prettier
 
 For this repo only:

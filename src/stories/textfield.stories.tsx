@@ -36,7 +36,11 @@ type Story = StoryObj<typeof TextField>;
 
 export const Default: Story = {};
 
-export const Error: Story = { args: { error: true, defaultValue: 'Invalid value' } };
+// Named ErrorState to avoid shadowing the global Error; shown as "Error" in Storybook.
+export const ErrorState: Story = {
+  name: 'Error',
+  args: { error: true, defaultValue: 'Invalid value' },
+};
 
 export const Readonly: Story = { args: { readOnly: true, defaultValue: 'Readonly value' } };
 

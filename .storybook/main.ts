@@ -6,8 +6,11 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
     '@storybook/addon-themes',
-    '@storybook/addon-mcp'
+    '@storybook/addon-mcp',
+    '@storybook/addon-vitest',
   ],
   framework: '@storybook/react-vite',
+  // Serve the app's public assets (e.g. favicon.svg, picked up as the Storybook favicon).
+  staticDirs: ['../public'],
 };
 export default config;

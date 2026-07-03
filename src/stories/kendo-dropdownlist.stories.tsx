@@ -37,6 +37,7 @@ const meta: Meta<DropDownListArgs> = {
       defaultItem={defaultItem}
       disabled={disabled}
       style={{ width: 240 }}
+      ariaLabel="Size"
     />
   ),
 };

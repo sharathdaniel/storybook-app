@@ -47,6 +47,7 @@ const meta: Meta<NumericTextBoxArgs> = {
       spinners={spinners}
       disabled={disabled}
       width={240}
+      ariaLabel="Amount"
     />
   ),
 };

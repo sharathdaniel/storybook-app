@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run lint:scss
+      - run: npm run format:check
+      # Type-check + production build of the Vite app.
+      - run: npm run build
+      # Browser used by @storybook/addon-vitest (Vitest browser mode).
+      - run: npx playwright install chromium --with-deps
+      # Runs every story as a test, including the a11y checks.
+      - run: npm run test
+      # Ensure the Storybook build itself stays green.
+      - run: npm run build-storybook

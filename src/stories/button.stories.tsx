@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button, IconButton } from '../components';
 import { Icon } from '../icons/Icon';
-import { IconRegistry } from '../icons/IconRegistry';
 
 /**
  * StyleBase button. Compose from a `variant` and a `size`; pass an `<Icon/>` as
@@ -12,16 +11,6 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
-  decorators: [
-    // Icons render via <use href="#icon-*">, so the registry of <symbol>s must be
-    // present in the DOM for the icon stories below.
-    (Story) => (
-      <>
-        <IconRegistry className="u-d-none" />
-        <Story />
-      </>
-    ),
-  ],
   argTypes: {
     variant: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
     size: { control: 'select', options: ['sm', 'md', 'lg', 'xl'] },
