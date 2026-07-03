@@ -25,7 +25,7 @@ export function SelectionControl({
   className,
   ref,
   ...rest
-}: InternalProps) {
+}: Readonly<InternalProps>) {
   return (
     <label className={cx(`app-c-${kind}`, className)}>
       <input ref={ref} {...rest} type={inputType} />

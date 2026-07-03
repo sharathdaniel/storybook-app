@@ -22,7 +22,7 @@ export function Button({
   className,
   ref,
   ...rest
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   return (
     <button
       ref={ref}
@@ -50,7 +50,7 @@ export function IconButton({
   className,
   ref,
   ...rest
-}: IconButtonProps) {
+}: Readonly<IconButtonProps>) {
   return (
     <button
       ref={ref}

@@ -10,7 +10,7 @@ interface IconProps {
   className?: string;
 }
 
-export function Icon({ name, ariaLabel, className = 'app-c-icon' }: IconProps) {
+export function Icon({ name, ariaLabel, className = 'app-c-icon' }: Readonly<IconProps>) {
   return (
     <span className={className}>
       <svg

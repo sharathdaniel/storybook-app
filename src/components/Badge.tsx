@@ -7,7 +7,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 /** StyleBase badge: base class plus an optional semantic modifier. */
-export function Badge({ variant = 'neutral', className, ...rest }: BadgeProps) {
+export function Badge({ variant = 'neutral', className, ...rest }: Readonly<BadgeProps>) {
   return (
     <span
       className={cx('app-c-badge', variant !== 'neutral' && `app-c-badge-${variant}`, className)}

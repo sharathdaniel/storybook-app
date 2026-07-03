@@ -2,7 +2,7 @@
  * Inline SVG sprite of `<symbol>` definitions referenced via `<use href="#icon-*">`.
  * Render once (hidden) somewhere in the DOM for the icons to resolve.
  */
-export function IconRegistry({ className }: { className?: string }) {
+export function IconRegistry({ className }: Readonly<{ className?: string }>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
       <symbol id="icon-home" viewBox="0 0 24 24" fill="none">

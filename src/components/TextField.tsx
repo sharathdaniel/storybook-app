@@ -17,7 +17,7 @@ export function TextField({
   className,
   ref,
   ...rest
-}: TextFieldProps) {
+}: Readonly<TextFieldProps>) {
   return (
     <input
       ref={ref}
@@ -42,7 +42,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
  * StyleBase multi-line textarea. Note: no size modifier - those set a fixed
  * height that breaks textareas (see _textfield.scss).
  */
-export function Textarea({ error = false, className, ref, ...rest }: TextareaProps) {
+export function Textarea({ error = false, className, ref, ...rest }: Readonly<TextareaProps>) {
   return (
     <textarea
       ref={ref}
